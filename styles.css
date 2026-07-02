@@ -69,18 +69,16 @@ a {
   gap: 10px;
   width: max-content;
   font-size: clamp(1.35rem, 1.7vw, 1.65rem);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1;
 }
 
-.brand-mark {
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background:
-    repeating-linear-gradient(45deg, transparent 0 4px, var(--text) 4px 7px),
-    var(--text);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+.brand-logo {
+  display: block;
+  width: 47px;
+  height: 47px;
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .nav-links {
@@ -283,6 +281,21 @@ a {
   line-height: 1.45;
 }
 
+.service-statement {
+  padding: clamp(58px, 7vw, 104px) 0;
+  border-top: 1px solid var(--line-soft);
+}
+
+.service-statement h2 {
+  max-width: 1120px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(3.35rem, 4.72vw, 4.45rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
 .feature-strip {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -297,90 +310,6 @@ a {
   min-width: 0;
   padding: 0 clamp(26px, 3.4vw, 44px);
   border-right: 1px solid var(--line-soft);
-}
-
-.feature-icon {
-  position: relative;
-  display: block;
-  width: 28px;
-  height: 28px;
-  margin-bottom: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  border-radius: 8px;
-  opacity: 0.82;
-}
-
-.feature-icon::before,
-.feature-icon::after {
-  position: absolute;
-  content: "";
-}
-
-.feature-icon-pipeline::before {
-  inset: 7px 6px;
-  border-top: 1px solid currentColor;
-  border-bottom: 1px solid currentColor;
-  color: rgba(255, 255, 255, 0.58);
-}
-
-.feature-icon-pipeline::after {
-  top: 13px;
-  left: 6px;
-  width: 15px;
-  border-top: 1px solid rgba(255, 255, 255, 0.58);
-}
-
-.feature-icon-conversation::before {
-  top: 8px;
-  left: 7px;
-  width: 14px;
-  height: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.58);
-  border-radius: 5px;
-}
-
-.feature-icon-conversation::after {
-  right: 8px;
-  bottom: 7px;
-  width: 6px;
-  height: 6px;
-  border-right: 1px solid rgba(255, 255, 255, 0.58);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.58);
-}
-
-.feature-icon-automation::before {
-  inset: 7px;
-  border: 1px solid rgba(255, 255, 255, 0.58);
-  border-radius: 50%;
-}
-
-.feature-icon-automation::after {
-  top: 13px;
-  left: 13px;
-  width: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.58);
-  transform: rotate(-28deg);
-  transform-origin: left center;
-}
-
-.feature-icon-visibility::before {
-  left: 7px;
-  bottom: 7px;
-  width: 3px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.58);
-  box-shadow:
-    6px -4px 0 rgba(255, 255, 255, 0.58),
-    12px -9px 0 rgba(255, 255, 255, 0.58);
-}
-
-.feature-icon-visibility::after {
-  left: 6px;
-  bottom: 8px;
-  width: 16px;
-  border-top: 1px solid rgba(255, 255, 255, 0.46);
-  transform: rotate(-28deg);
-  transform-origin: left center;
 }
 
 .feature-strip article:first-child {
@@ -415,7 +344,7 @@ a {
   justify-items: center;
   gap: 28px;
   margin-top: clamp(58px, 7vw, 96px);
-  padding-top: clamp(48px, 6vw, 82px);
+  padding: clamp(48px, 6vw, 82px) 0 clamp(34px, 4vw, 52px);
   border-top: 1px solid var(--line-soft);
   text-align: center;
 }
@@ -517,6 +446,99 @@ a {
   border-bottom: 0;
 }
 
+.about-page {
+  padding-bottom: 0;
+}
+
+.about-fact {
+  padding: clamp(48px, 6vw, 78px) 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.about-fact:last-child {
+  padding-bottom: clamp(42px, 5vw, 66px);
+  border-bottom: 0;
+}
+
+.about-fact h1,
+.about-fact h2 {
+  max-width: 980px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(3.35rem, 4.72vw, 4.45rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.about-fact p {
+  max-width: 760px;
+  margin: 31px 0 0;
+  color: #8f919a;
+  font-size: clamp(1rem, 1.12vw, 1.08rem);
+  line-height: 1.55;
+}
+
+.pricing-page {
+  padding-bottom: clamp(72px, 8vw, 112px);
+}
+
+.pricing-hero {
+  padding: clamp(96px, 13vw, 170px) 0;
+}
+
+.pricing-hero h1 {
+  max-width: 980px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(3.35rem, 4.72vw, 4.45rem);
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.pricing-hero p {
+  max-width: 720px;
+  margin: 31px 0 0;
+  color: #8f919a;
+  font-size: clamp(1rem, 1.12vw, 1.08rem);
+  line-height: 1.55;
+}
+
+.pricing-hero .button {
+  margin-top: 43px;
+}
+
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0 0;
+  border-top: 1px solid var(--line-soft);
+  color: #8f929b;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-links a {
+  transition: color 180ms ease;
+}
+
+.footer-links a:hover {
+  color: var(--text);
+}
+
 @media (max-width: 980px) {
   .landing-screen {
     min-height: max(720px, 100svh);
@@ -558,6 +580,16 @@ a {
     margin-bottom: 28px;
   }
 
+  .service-statement {
+    width: min(100%, 680px);
+    margin: 0 auto;
+    padding: 64px 0;
+  }
+
+  .service-statement h2 {
+    font-size: clamp(2.8rem, 7vw, 3.75rem);
+  }
+
   .feature-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 28px 0;
@@ -595,6 +627,15 @@ a {
 
   .run-steps article p {
     grid-column: 2;
+  }
+
+  .about-fact h1,
+  .about-fact h2 {
+    font-size: clamp(2.8rem, 7vw, 3.75rem);
+  }
+
+  .pricing-hero h1 {
+    font-size: clamp(2.8rem, 7vw, 3.75rem);
   }
 
 }
@@ -678,6 +719,16 @@ a {
     margin-bottom: 22px;
   }
 
+  .service-statement {
+    width: 100%;
+    margin: 0;
+    padding: 44px 0;
+  }
+
+  .service-statement h2 {
+    font-size: clamp(1.3rem, 6.4vw, 2.75rem);
+  }
+
   .button {
     width: 100%;
     min-width: 0;
@@ -698,13 +749,6 @@ a {
     padding: 0 12px;
   }
 
-  .feature-icon {
-    width: 24px;
-    height: 24px;
-    margin-bottom: 12px;
-    border-radius: 7px;
-  }
-
   .feature-strip h2 {
     font-size: 0.78rem;
     line-height: 1.35;
@@ -719,7 +763,7 @@ a {
   .bottom-cta {
     gap: 20px;
     margin-top: 46px;
-    padding-top: 38px;
+    padding: 38px 0 30px;
   }
 
   .bottom-cta p {
@@ -770,6 +814,58 @@ a {
 
   .run-steps p {
     font-size: 0.92rem;
+  }
+
+  .about-page {
+    padding-bottom: 0;
+  }
+
+  .about-fact {
+    padding: 40px 0;
+  }
+
+  .about-fact:last-child {
+    padding-bottom: 34px;
+  }
+
+  .about-fact h1,
+  .about-fact h2 {
+    font-size: clamp(1.3rem, 6.4vw, 2.75rem);
+  }
+
+  .about-fact p {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .pricing-page {
+    padding-bottom: 72px;
+  }
+
+  .pricing-hero {
+    padding: 58px 0;
+  }
+
+  .pricing-hero h1 {
+    font-size: clamp(1.3rem, 6.4vw, 2.75rem);
+  }
+
+  .pricing-hero p {
+    margin-top: 24px;
+    font-size: 0.9rem;
+    line-height: 1.45;
+  }
+
+  .pricing-hero .button {
+    margin-top: 28px;
+  }
+
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+    padding: 32px 0;
   }
 
 }
