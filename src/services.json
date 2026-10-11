@@ -1,0 +1,149 @@
+[
+  {
+    "id": "outbound-stack-setup",
+    "name": "Outbound Stack Set-up",
+    "url": "/services/outbound-stack-setup",
+    "description": "The tools, configuration, and connections your team needs to run outbound—from a new setup to a rebuild of what you already use.",
+    "headline": "Set up your outbound tools.",
+    "intro": "We review your sales process, existing tools, and budget, then configure the systems your team needs to research prospects, manage outreach, and track activity.",
+    "audience": "Companies starting outbound, equipping their first sales team, or replacing a fragmented setup.",
+    "scope": [
+      "Existing-tool and sales-process review.",
+      "Tool selection based on requirements and budget.",
+      "Prospecting and enrichment tool configuration.",
+      "Outreach platform configuration.",
+      "Sending infrastructure and authentication setup.",
+      "Basic CRM fields, ownership rules, and pipeline configuration needed for outbound.",
+      "Standard integrations between the selected tools.",
+      "Basic activity tracking and reporting.",
+      "Testing, documentation, and team handover."
+    ],
+    "outcome": "A configured, connected, and tested outbound environment that the team can use.",
+    "boundary": "This service covers the outbound stack and its standard configuration. Complex custom workflows belong in Outbound Automation. Wider CRM migrations and sales-process redesign belong in CRM Implementation & Sales Operations.",
+    "engagement": "Scoped implementation project.",
+    "cta": "Discuss your stack",
+    "label": "Implementation project",
+    "related": [
+      1,
+      3
+    ]
+  },
+  {
+    "id": "outbound-automation",
+    "name": "Outbound Automation",
+    "url": "/services/outbound-automation",
+    "description": "Connect your tools and automate repetitive sales work, including research, enrichment, lead routing, CRM updates, and follow-up tasks.",
+    "headline": "Automate research, routing, and CRM updates.",
+    "intro": "We map the repetitive steps in your sales process and build workflows that move information between systems, with clear rules, review points, and error handling.",
+    "audience": "Teams that already have sales tools but still rely on manual research, spreadsheet transfers, inconsistent updates, and repetitive administration.",
+    "scope": [
+      "Workflow mapping and automation planning.",
+      "Company and contact research workflows.",
+      "Data enrichment and duplicate checks.",
+      "Account and lead routing.",
+      "CRM synchronisation and updates.",
+      "Campaign enrolment based on agreed rules and approvals.",
+      "Reply notifications and follow-up task creation.",
+      "Exclusion rules and stop conditions.",
+      "Error alerts, testing, documentation, and handover."
+    ],
+    "outcome": "A defined set of working automations that reduces repetitive handling and keeps the sales process consistent.",
+    "boundary": "Automation executes agreed rules. It does not guarantee replies or meetings. We include human approval where judgement or external communication requires it.",
+    "engagement": "Scoped implementation based on the workflows and integrations required.",
+    "cta": "Discuss your workflows",
+    "label": "Workflow implementation",
+    "related": [
+      0,
+      2,
+      4
+    ]
+  },
+  {
+    "id": "outbound-intelligence",
+    "name": "Outbound Intelligence",
+    "url": "/services/outbound-intelligence",
+    "description": "Build a research and monitoring system that identifies suitable accounts and surfaces relevant developments in your market.",
+    "headline": "Research accounts and monitor your market.",
+    "intro": "We build intelligence systems around your target market, combining account research, relevant sources, and monitoring rules to deliver useful findings to your sales team.",
+    "audience": "Teams that need better account prioritisation, ongoing market research, or visibility into developments across target companies.",
+    "scope": [
+      "Target-account criteria and market definition.",
+      "Research-source selection.",
+      "Account identification and qualification.",
+      "Monitoring of agreed developments, such as new projects, tenders, expansion, hiring, or leadership changes.",
+      "Account matching and prioritisation.",
+      "Relevant contact or role identification where information is available.",
+      "Source links, dates, and an explanation of relevance.",
+      "Delivery into an agreed destination, such as a CRM, shared sheet, Slack, or email.",
+      "Optional ongoing monitoring and refinement."
+    ],
+    "outcome": "An organised research and monitoring process that helps the team decide where to focus its attention.",
+    "boundary": "A relevant company event is not proof of buying intent. Findings include source links and dates, with sourced facts clearly separated from interpretations. Public announcements are starting points for investigation, not confirmed purchase opportunities.",
+    "engagement": "Initial implementation, with optional recurring monitoring and maintenance.",
+    "cta": "Discuss your intelligence needs",
+    "label": "Implementation + optional monitoring",
+    "related": [
+      1,
+      4
+    ]
+  },
+  {
+    "id": "crm-sales-operations",
+    "name": "CRM Implementation & Sales Operations",
+    "url": "/services/crm-sales-operations",
+    "description": "Configure your CRM around how your team sells, with clear pipelines, reliable data, ownership rules, reporting, and handovers.",
+    "headline": "Implement or reorganise your CRM.",
+    "intro": "We implement or reorganise your CRM so your team can manage accounts, follow opportunities, and understand what needs attention.",
+    "audience": "Companies introducing a CRM, moving from spreadsheets, or working with inconsistent data and poorly defined sales processes.",
+    "scope": [
+      "Sales-process mapping.",
+      "CRM implementation or reconfiguration.",
+      "Scoped data migration and cleanup.",
+      "Account, contact, lead, and deal structures.",
+      "Pipeline stages and required fields.",
+      "Ownership and routing rules.",
+      "Follow-up tasks and sales handovers.",
+      "Operational reports and dashboards.",
+      "Relevant integrations.",
+      "Data validation, documentation, and team training."
+    ],
+    "outcome": "A usable CRM with clear operating rules, organised information, and reporting aligned with the sales process.",
+    "boundary": "This is broader than the basic CRM configuration included in Outbound Stack Set-up. Migration volume, integration complexity, and process changes are agreed during scoping.",
+    "engagement": "Scoped implementation or improvement project.",
+    "cta": "Discuss your CRM",
+    "label": "Implementation or improvement",
+    "related": [
+      0,
+      4
+    ]
+  },
+  {
+    "id": "managed-outbound-operations",
+    "name": "Managed Outbound Operations",
+    "url": "/services/managed-outbound-operations",
+    "description": "Ongoing support to maintain your outbound systems, monitor workflows, manage data quality, and improve the operation as your needs change.",
+    "headline": "Maintain your outbound systems.",
+    "intro": "We provide ongoing operational support for your sales systems, so your team has someone responsible for maintenance, checks, and agreed improvements.",
+    "audience": "Teams with an existing outbound setup that need continued operational support but do not need a full-time internal specialist.",
+    "scope": [
+      "Workflow and integration monitoring.",
+      "Troubleshooting and maintenance.",
+      "Data-quality checks.",
+      "Enrichment and research-process upkeep.",
+      "Campaign configuration and launch checks where agreed.",
+      "Activity and operational reporting.",
+      "Tool and process updates.",
+      "Agreed optimisation work.",
+      "Regular reviews and team support."
+    ],
+    "outcome": "A maintained sales operation with defined responsibilities and a clear process for addressing issues and improvements.",
+    "boundary": "Cold calling, daily inbox handling, appointment setting, and closing are not included unless separately agreed. Responsibilities, capacity, and support arrangements are defined in advance; meetings and business outcomes are not guaranteed.",
+    "engagement": "Monthly service with clearly defined responsibilities, capacity, and support arrangements.",
+    "cta": "Discuss ongoing support",
+    "label": "Monthly operational support",
+    "related": [
+      1,
+      3
+    ]
+  }
+]
