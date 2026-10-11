@@ -25,3 +25,16 @@ test('Vercel entry point handles request format and rate-limit failure',async()=
  const limited=await endpoint.fetch(req({}, {'x-vercel-forwarded-for':'192.0.2.10'}));
  assert.equal(limited.status,429);assert.equal((await limited.json()).accepted,false);
 });
+
+test('team setup and every displayed service can be selected together',async()=>{
+ const {readFile}=await import('node:fs/promises');
+ const services=JSON.parse(await readFile(new URL('../src/services.json',import.meta.url),'utf8'));
+ const selected=[...services.map(s=>s.id),'not-sure'];
+ let sent;
+ const r=await handleEnquiry(req({...payload,services:selected}),env,async(_,opts)=>{
+  sent=JSON.parse(opts.body).text;return Response.json({id:'test-team-enquiry'});
+ });
+ assert.equal(r.status,200);
+ assert.match(sent,/Outbound Team Setup/);
+ for(const s of services)assert.ok(sent.includes(s.name));
+});

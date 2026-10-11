@@ -1,6 +1,6 @@
 # Nuvrix Connect
 
-A dependency-free, static B2B services website with eight pages and a server-side enquiry endpoint. The existing HTML/CSS foundation and Nuvrix mark are retained. The approved October 2026 brief is the source of positioning and service content.
+A dependency-free, static B2B services website with nine pages and a server-side enquiry endpoint. The existing HTML/CSS foundation and Nuvrix mark are retained. The approved October 2026 brief is the source of positioning and service content.
 
 ## Local development
 
@@ -34,7 +34,13 @@ Earlier drafts and screenshots are retained in `previews/` and excluded from `di
 
 ## Vercel deployment
 
-The existing public domain identifies Vercel in its response headers. `vercel.json` configures the static build, eight page routes, legacy redirects, security headers, and `/api/enquiries` function. The project is ready to import into the existing Vercel project; it has not been published from this task.
+Production is hosted on Vercel project `nuvrix` in the `arlinds-projects-c6cabf85` team, connected to the `main` branch of https://github.com/arlsusu22/nuvrix. The apex domain redirects to https://www.nuvrixconnect.com/.
+
+The initial rebuild was published on 11 October 2026 from commit `cc2622d87b712adc6ff5fad2df08f13270767e19`, after a successful Vercel preview. Production deployment: https://vercel.com/arlinds-projects-c6cabf85/nuvrix/EstUFQmiNok4BgJqp8cDXhsSwVbT. The prior production commit is `7d0cdf99b025d62d0cf9b9bff9784708e384805f`.
+
+Public checks passed for all nine pages, stylesheet, logos, sitemap, robots, four legacy redirects, the 404 response, and API validation. Actual email delivery and production email environment variables remain unverified; dashboard sign-in is required to finish configuration. No test email was sent.
+
+`vercel.json` configures the static build, page routes, redirects, security headers, and `/api/enquiries` function. The release checkout used for publishing is `/private/tmp/nuvrix-production-20261011`; the editable project source remains this workspace. Future releases should use the same GitHub repository and Vercel project.
 
 Use the repository root, the **Other** framework preset, Node.js **22.x**, build command `npm run build`, and output directory `dist`. Deploy the project source, not just the `dist` folder: the serverless function lives in `api/` and imports `lib/enquiry.mjs` and `src/services.json`.
 
@@ -78,8 +84,13 @@ Projects are quoted after scoping. No public prices, certifications, customer pr
 - `/services/outbound-intelligence`
 - `/services/crm-sales-operations`
 - `/services/managed-outbound-operations`
+- `/services/outbound-team-setup`
 - `/contact`
 
-Existing `/about-us.html` goes to the homepage’s “How we work” section; `/pricing.html` goes to `/contact`; `/run.html` goes to Managed Outbound Operations. Vercel and the Node server use permanent HTTP redirects. Static HTML redirect fallbacks are also generated.
+Existing `/how-it-runs.html` and `/run.html` redirect to Managed Outbound Operations. `/about-us.html` goes to the homepage’s “How we work” section; `/pricing.html` goes to `/contact`; `/run.html` goes to Managed Outbound Operations. Vercel and the Node server use permanent HTTP redirects. Static HTML redirect fallbacks are also generated.
 
 A sitemap, robots file, and custom 404 page are included. Assets and frontend code are self-hosted; the site does not use analytics or third-party browser scripts.
+
+## Service illustrations
+
+All six service detail pages use the SVG process illustrations in `src/service-art.mjs`. Animation runs only while the illustration is visible, includes a pause/play control, and is disabled for reduced-motion preferences. Outbound Team Setup covers hiring support, tools, training, ramp-up support, and handover; ongoing people management is separately scoped.

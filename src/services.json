@@ -25,7 +25,8 @@
     "label": "Implementation project",
     "related": [
       1,
-      3
+      3,
+      5
     ]
   },
   {
@@ -114,7 +115,8 @@
     "label": "Implementation or improvement",
     "related": [
       0,
-      4
+      4,
+      5
     ]
   },
   {
@@ -144,6 +146,36 @@
     "related": [
       1,
       3
+    ]
+  },
+  {
+    "id": "outbound-team-setup",
+    "name": "Outbound Team Setup",
+    "url": "/services/outbound-team-setup",
+    "description": "We help you hire, equip, and train a dedicated outbound team for your business, with clear roles, tools, and working processes.",
+    "headline": "Build your dedicated outbound team.",
+    "intro": "We help you define the roles, find and assess candidates, set up their tools, and train the team to run outbound for your business.",
+    "audience": "Founders and businesses building their first outbound team, bringing outsourced work in-house, or adding people to an existing sales operation.",
+    "scope": [
+      "Team structure, responsibilities, and hiring requirements.",
+      "Role descriptions and candidate evaluation criteria.",
+      "Candidate sourcing, screening, and interview support.",
+      "Tool access, CRM setup, and onboarding plans.",
+      "Account research, outreach, and follow-up playbooks.",
+      "Practical training on your tools and sales process.",
+      "Activity expectations, quality checks, and reporting routines.",
+      "Initial ramp-up support and feedback.",
+      "Documentation and handover to your internal team lead."
+    ],
+    "outcome": "An outbound team hired by your business, equipped with the agreed tools, trained on your process, and handed over with documented responsibilities and playbooks.",
+    "boundary": "Your business makes hiring decisions and employs the team. We support recruitment, setup, and training. Ongoing people management, payroll, and third-party recruitment fees are not included unless separately agreed. System maintenance can be added through Managed Outbound Operations.",
+    "engagement": "A scoped team-building project, with the roles, hiring support, training, and ramp-up period agreed in advance. Any ongoing team management is a separate engagement.",
+    "cta": "Discuss your team",
+    "label": "Hiring support, setup, and training",
+    "related": [
+      0,
+      3,
+      4
     ]
   }
 ]

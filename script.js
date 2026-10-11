@@ -43,3 +43,28 @@ if(form){
   finally{submit.disabled=false;form.removeAttribute('aria-busy');submit.innerHTML='Send enquiry <span aria-hidden="true">↗</span>';}
  });
 }
+
+// Illustrations stay readable without JavaScript and honour the visitor's motion setting.
+const motionPreference=window.matchMedia('(prefers-reduced-motion: reduce)');
+const illustrations=[...document.querySelectorAll('[data-service-art]')];
+const illustrationObserver='IntersectionObserver' in window?new IntersectionObserver(entries=>{
+ for(const entry of entries)entry.target.classList.toggle('art-playing',entry.isIntersecting&&!motionPreference.matches);
+},{threshold:.15}):null;
+function updateIllustrationMotion(){
+ for(const illustration of illustrations){
+  illustration.classList.remove('art-playing');
+  if(illustrationObserver){illustrationObserver.unobserve(illustration);illustrationObserver.observe(illustration);}
+  else if(!motionPreference.matches)illustration.classList.add('art-playing');
+ }
+}
+for(const illustration of illustrations){
+ const toggle=illustration.querySelector('.animation-toggle');
+ toggle.addEventListener('click',()=>{
+  const paused=illustration.classList.toggle('art-paused');
+  toggle.setAttribute('aria-pressed',String(paused));
+  toggle.setAttribute('aria-label',paused?'Play illustration animation':'Pause illustration animation');
+  toggle.textContent=paused?'Play animation':'Pause animation';
+ });
+}
+motionPreference.addEventListener('change',updateIllustrationMotion);
+updateIllustrationMotion();
