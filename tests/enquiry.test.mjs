@@ -7,7 +7,7 @@ const req=(value=payload,headers={})=>new Request('https://www.nuvrixconnect.com
 test('all invalid fields are rejected before delivery',async()=>{const r=await handleEnquiry(req({}),env,()=>assert.fail('must not send'));assert.equal(r.status,422);assert.deepEqual(Object.keys((await r.json()).errors).sort(),['company','description','email','name','services']);});
 test('unknown services and oversized input are rejected',()=>{assert.ok(validateEnquiry({...payload,services:['invented']}).errors.services);assert.ok(validateEnquiry({...payload,name:'x'.repeat(121)}).errors.name);assert.ok(validateEnquiry({...payload,email:'a\nb@example.com'}).errors.email);});
 test('unconfigured backend never reports success',async()=>{const r=await handleEnquiry(req(),{},()=>assert.fail('must not send'));assert.equal(r.status,503);assert.equal((await r.json()).accepted,false);});
-test('provider acceptance is required; receipt is not exposed',async()=>{let options;const r=await handleEnquiry(req(),env,async(url,opts)=>{assert.equal(url,'https://api.resend.com/emails');options=opts;return Response.json({id:'provider-receipt'})});assert.equal(r.status,200);assert.deepEqual(await r.json(),{accepted:true});const body=JSON.parse(options.body);assert.equal(body.reply_to,payload.email);assert.equal(body.to[0],env.ENQUIRY_TO_EMAIL);assert.match(body.text,/Outbound Automation/);assert.equal(options.headers['Idempotency-Key'],'nuvrix-enquiry-'+payload.requestId);});
+test('provider acceptance is required; receipt is not exposed',async()=>{let options;const r=await handleEnquiry(req(),env,async(url,opts)=>{assert.equal(url,'https://api.resend.com/emails');options=opts;return Response.json({id:'provider-receipt'})});assert.equal(r.status,200);assert.deepEqual(await r.json(),{accepted:true});const body=JSON.parse(options.body);assert.equal(body.reply_to,payload.email);assert.deepEqual(body.to,['arlind@nuvrixconnect.com']);assert.match(body.text,/Outbound Automation/);assert.equal(options.headers['Idempotency-Key'],'nuvrix-enquiry-'+payload.requestId);});
 test('provider rejection or malformed success never reports success',async()=>{for(const [body,status] of [[{message:'rejected'},403],[{},200]]){const r=await handleEnquiry(req(),env,async()=>Response.json(body,{status}));assert.equal(r.status,502);assert.equal((await r.json()).accepted,false);}});
 test('timeouts are reported as unconfirmed',async()=>{const r=await handleEnquiry(req(),env,async()=>{throw new Error('timeout')});assert.equal(r.status,502);assert.match((await r.json()).message,/confirm/);});
 test('honeypot and cross-origin submissions do not send',async()=>{for(const request of [req({...payload,website:'spam'}),req(payload,{Origin:'https://other.example'})]){const r=await handleEnquiry(request,env,()=>assert.fail('must not send'));assert.ok(r.status>=400);}});
@@ -37,4 +37,13 @@ test('team setup and every displayed service can be selected together',async()=>
  assert.equal(r.status,200);
  assert.match(sent,/Outbound Team Setup/);
  for(const s of services)assert.ok(sent.includes(s.name));
+});
+
+// Prevent an old deployment setting from sending enquiries to the previous recipient.
+test('approved enquiry recipient is used without a recipient environment variable',async()=>{
+ const {ENQUIRY_TO_EMAIL,...mailEnv}=env;let delivery;
+ const r=await handleEnquiry(req(),mailEnv,async(_,opts)=>{delivery=JSON.parse(opts.body);return Response.json({id:'recipient-test'});});
+ assert.equal(r.status,200);
+ assert.deepEqual(delivery.to,['arlind@nuvrixconnect.com']);
+ assert.equal(delivery.reply_to,payload.email);
 });

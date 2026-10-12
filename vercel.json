@@ -43,6 +43,14 @@
     {
       "source": "/contact",
       "destination": "/contact/index.html"
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy-policy/index.html"
+    },
+    {
+      "source": "/terms",
+      "destination": "/terms/index.html"
     }
   ],
   "headers": [
